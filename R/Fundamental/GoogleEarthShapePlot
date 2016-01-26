@@ -1,0 +1,7 @@
+setwd("F:\\GDrive\\Research\\BW_PMCoarse\\GIS")
+
+cty=readOGR(".","cb_2013_us_county_500k")
+cty2=spTransform(cty, CRS("+proj=longlat +datum=WGS84"))
+writeOGR(cty2, "PM10Mon.kml", layer="PM10", driver="KML") 
+cty2=fortify(cty2)
+
